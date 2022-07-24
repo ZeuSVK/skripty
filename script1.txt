@@ -6,15 +6,19 @@ dnf -y groupinstall "Development Tools"
 dnf install epel-release -y
 dnf --enablerepo=epel group
 dnf config-manager --set-enabled powertools
-dnf groupinstall -y "Xfce" "base-x"
+dnf groupinstall -y "Xfce"
+dnf install -y xinit
+//dnf groupinstall -y "Xfce" "base-x"
 #príkaz pre štart prostredia z príkazového riadka
-echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc
+
+//echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc
+
 #nastavenie grafického loginu ako základné
 systemctl set-default graphical
 #inštalácia Xfce prostredia
-dnf -y install xfce4-session
-yum groupinstall -y "Server with GUI"
-dnf install -y xorg-x11-server-Xorg
+//dnf -y install xfce4-session
+//yum groupinstall -y "Server with GUI"
+//dnf install -y xorg-x11-server-Xorg
 #inštalácia "balíkov" tretej strany potrebných pre inštaláciu otter-browseru
 dnf -y install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-2.el8.noarch.rpm
 dnf --enablerepo=raven-multimedia
@@ -39,6 +43,7 @@ echo "xorg-x11-server-Xorg" > /etc/dnf/protected.d/xorg-x11-server-Xorg.conf
 echo "sudo" > /etc/dnf/protected.d/sudo.conf
 echo "dnf" > /etc/dnf/protected.d/dnf.conf
 echo "Xfce" > /etc/dnf/protected.d/Xfce.conf
+echo "xinit" > /etc/dnf/protected.d/xinit.conf
 echo "xterm" > /etc/dnf/protected.d/xterm.conf
 echo "NetworkManager" > /etc/dnf/protected.d/NetworkManager.conf
 echo "bash" > /etc/dnf/protected.d/bash.conf
