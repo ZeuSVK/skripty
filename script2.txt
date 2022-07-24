@@ -2,8 +2,10 @@ dnf install epel-release -y
 dnf --enablerepo=epel group
 dnf groupinstall -y "Xfce"
 echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
+echo "Xorg" > /etc/dnf/protected.d/Xorg.conf
 echo "NetworkManager" > /etc/dnf/protected.d/NetworkManager.conf
 echo "bash" > /etc/dnf/protected.d/bash.conf
+echo "accountsservice" > /etc/dnf/protected.d/accountsservice.conf
 yum list installed > installed.txt
 gawk '{print "yum autoremove -y "$0}' installed.txt > installed1.txt
 sed 's/\.x86_64.*/.x86_64/' installed1.txt > installed2.txt
