@@ -1,6 +1,10 @@
 dnf install epel-release -y
 dnf --enablerepo=epel group
-dnf groupinstall -y "Xfce"
+dnf install dnf-plugins-core -y
+dnf config-manager --set-enabled powertools
+dnf groupinstall "Xfce" "base-x" -y
+echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc
+systemctl set-default graphical
 echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
 echo "Xorg" > /etc/dnf/protected.d/Xorg.conf
 echo "NetworkManager" > /etc/dnf/protected.d/NetworkManager.conf
