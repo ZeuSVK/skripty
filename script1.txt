@@ -43,7 +43,4 @@ echo "xterm" > /etc/dnf/protected.d/xterm.conf
 echo "NetworkManager" > /etc/dnf/protected.d/NetworkManager.conf
 echo "bash" > /etc/dnf/protected.d/bash.conf
 useradd -s /sbin/nologin mockbuild
-#mazanie useless vecí
-yum autoremove -y gnome PackageKit.x86_64 chrome-gnome-shell.x86_64 gnome-control-center-filesysyem.noarch gnome-autoar.x86_64
-rm -rfv /mockbuild
-rm -rfv /home/peterk/otter-browser-master/build/
+
