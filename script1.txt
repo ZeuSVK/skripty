@@ -45,7 +45,7 @@ echo "bash" > /etc/dnf/protected.d/bash.conf
 useradd -s /sbin/nologin mockbuild
 #výpis nainštalovaných balíčkov a úprava súboru
 yum list installed > installed.txt
-gawk '{print "yum autoremove -y "$0} installed.txt > installed1.txt
+gawk '{print "yum autoremove -y "$0}' installed.txt > installed1.txt
 sed 's/\.x86_64.*/.x86_64/' installed1.txt > installed2.txt
 sed 's/\.noarch.*/.noarch/' installed2.txt > installed3.txt
 #spustenie skriptu
