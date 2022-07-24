@@ -1,6 +1,6 @@
 #!/bin/sh
 #inštalácia knižníc potrebných pre prehliadač otter-browser
-dnf -y install qt5-qtbase glibc libstdc++ qt5-qtxmlpatterns qt5-qtbase-gui qt5-qtbase-devel qt5-qtmultimedia-devel qt5-qtsvg-devel qt5-qtwebkit-devel qt5-qtwebengine qt5-qtwebchannel hunspell qt5-qtmultimedia
+//dnf -y install qt5-qtbase glibc libstdc++ qt5-qtxmlpatterns qt5-qtbase-gui qt5-qtbase-devel qt5-qtmultimedia-devel qt5-qtsvg-devel qt5-qtwebkit-devel qt5-qtwebengine qt5-qtwebchannel hunspell qt5-qtmultimedia
 #inštalácia vývojárskych nástrojov pre inštaláciu prostredia Xfce
 dnf -y groupinstall "Development Tools"
 dnf install epel-release -y
@@ -32,7 +32,7 @@ dnf install -y https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Package
 dnf install -y motif libpng15 poppler-utils urw-fonts xorg-x11-fonts-ISO8859-1-100dpi xorg-x11-fonts-ISO8859-1-75dpi
 #zápis knižníc a aplikácií do chráneného priečinka
 echo "otter-browser" > /etc/dnf/protected.d/otter-browser.conf
-echo "accountsservice" > /etc/dnf/protected.d/accountsservice.conf
+//echo "accountsservice" > /etc/dnf/protected.d/accountsservice.conf
 echo "xpdf" > /etc/dnf/protected.d/xpdf.conf
 echo "libQt5WebEngineWidgets" > /etc/dnf/protected.d/libQt5WebEngineWidgets
 echo "libQt5Multimedia" > /etc/dnf/protected.d/libQt5Multimedia.conf
@@ -43,7 +43,7 @@ echo "xorg-x11-server-Xorg" > /etc/dnf/protected.d/xorg-x11-server-Xorg.conf
 echo "sudo" > /etc/dnf/protected.d/sudo.conf
 echo "dnf" > /etc/dnf/protected.d/dnf.conf
 echo "Xfce" > /etc/dnf/protected.d/Xfce.conf
-echo "xinit" > /etc/dnf/protected.d/xinit.conf
+echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
 echo "xterm" > /etc/dnf/protected.d/xterm.conf
 echo "NetworkManager" > /etc/dnf/protected.d/NetworkManager.conf
 echo "bash" > /etc/dnf/protected.d/bash.conf
@@ -63,7 +63,6 @@ cd /boot
 shopt -s extglob
 echo rm -rfv '!("grub2"|"vmlinuz-'$(uname -r)'"|"initramfs-'$(uname -r).img'"|"config-'$(uname -r)'"|"loader")' > kernel.txt
 sh kernel.txt
-rm -rfv !("grub2"|"vmlinuz-4.18.0-383.el8.x86_64"|"initramfs-4.18.0-383.el8.x86_64.img"|"config-4.18.0-383.el8.x86_64"|"loader")
 #inštalácia a štart ssh
 dnf -y install openssh-server openssh-clients
 systemctl start sshd
