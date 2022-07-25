@@ -1,3 +1,4 @@
+#!/bin/sh
 dnf install epel-release -y
 dnf --enablerepo=epel group
 dnf install dnf-plugins-core -y
@@ -32,17 +33,22 @@ echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
 echo "Xorg" > /etc/dnf/protected.d/Xorg.conf
 echo "xorg-x11-xinit-session" > /etc/dnf/protected.d/xorg-x11-xinit-session.conf
 echo "openssh-server" > /etc/dnf/protected.d/openssh-server.conf
+echo "libwnck-2.31.0-16" > /etc/dnf/protected.d/libwnck-2.31.0-16.conf
+echo "wget" > /etc/dnf/protected.d/wget.conf
+echo "xfce4-session" > /etc/dnf/protected.d/xfce4-session.conf
+#ochrana priečinka pred odstránením
+chattr +i /usr/bin/xfce4-session
+#pridanie užívateľa
 adduser test
-
+#zistenie všetkých nainštalovaných balíčkov
 yum list installed > installed.txt
 gawk '{print "yum autoremove -y "$0}' installed.txt > installed1.txt
 sed 's/\.x86_64.*/.x86_64/' installed1.txt > installed2.txt
 sed 's/\.noarch.*/.noarch/' installed2.txt > installed3.txt
 #spustenie skriptu
-//sh installed3.txt
-
-
+sh installed3.txt
 dnf install -y libxfce4ui
 dnf install -y xfce4-session
 dnf install -y https://pkgs.dyn.su/el8/base/x86_64/libwnck-2.31.0-16.el8.x86_64.rpm
 du / | sort -n
+su test
