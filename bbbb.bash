@@ -16,6 +16,7 @@ dnf install -y https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Package
 dnf install -y libxfce4ui
 dnf install -y xfce4-session
 dnf install -y https://pkgs.dyn.su/el8/base/x86_64/libwnck-2.31.0-16.el8.x86_64.rpm
+echo "accountsservice" > /etc/dnf/protected.d/accountsservice.conf
 echo "xpdf" > /etc/dnf/protected.d/xpdf.conf
 echo "libQt5WebEngineWidgets" > /etc/dnf/protected.d/libQt5WebEngineWidgets
 echo "libQt5Multimedia" > /etc/dnf/protected.d/libQt5Multimedia.conf
