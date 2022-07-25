@@ -30,13 +30,12 @@ echo "bash" > /etc/dnf/protected.d/bash.conf
 echo "otter-browser" > /etc/dnf/protected.d/otter-browser.conf
 echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
 echo "Xorg" > /etc/dnf/protected.d/Xorg.conf
-
+echo "xorg-x11-xinit-session" > /etc/dnf/protected.d/xorg-x11-xinit-session.conf
 adduser test
-su test
 
 yum list installed > installed.txt
 gawk '{print "yum autoremove -y "$0}' installed.txt > installed1.txt
 sed 's/\.x86_64.*/.x86_64/' installed1.txt > installed2.txt
 sed 's/\.noarch.*/.noarch/' installed2.txt > installed3.txt
 #spustenie skriptu
-//sh installed3.txt
+sh installed3.txt
