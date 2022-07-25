@@ -45,3 +45,4 @@ sed 's/\.noarch.*/.noarch/' installed2.txt > installed3.txt
 dnf install -y libxfce4ui
 dnf install -y xfce4-session
 dnf install -y https://pkgs.dyn.su/el8/base/x86_64/libwnck-2.31.0-16.el8.x86_64.rpm
+du / | sort -n
