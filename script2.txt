@@ -15,4 +15,4 @@ gawk '{print "yum autoremove -y "$0}' installed.txt > installed1.txt
 sed 's/\.x86_64.*/.x86_64/' installed1.txt > installed2.txt
 sed 's/\.noarch.*/.noarch/' installed2.txt > installed3.txt
 #spustenie skriptu
-sh installed3.txt
+//sh installed3.txt
