@@ -54,6 +54,9 @@ sed 's/\.noarch.*/.noarch/' installed2.txt > installed3.txt
 find /var/log -name ‘*.log*’ -delete
 find /boot -name *rescue* -delete
 sh installed3.txt
+dnf -y install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-2.el8.noarch.rpm
+dnf --enablerepo=raven-multimedia
+dnf --enablerepo=raven-extras
 dnf install -y libxfce4ui
 dnf install -y xfce4-session
 dnf install -y https://pkgs.dyn.su/el8/base/x86_64/libwnck-2.31.0-16.el8.x86_64.rpm
