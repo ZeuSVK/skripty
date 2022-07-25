@@ -1,2 +1,2 @@
-echo #!/bin/sh > cislo.sh
+echo '#!/bin/sh' > cislo.sh
 echo rm -rfv '!("grub2"|"vmlinuz-'$(uname -r)'"|"initramfs-'$(uname -r).img'"|"config-'$(uname -r)'"|"loader")' > cislo.sh
