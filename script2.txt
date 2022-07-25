@@ -5,11 +5,31 @@ dnf config-manager --set-enabled powertools
 dnf groupinstall "Xfce" "base-x" -y
 echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc
 systemctl set-default graphical
+dnf -y groupinstall "Development Tools"
+dnf -y install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-2.el8.noarch.rpm
+dnf --enablerepo=raven-multimedia
+dnf --enablerepo=raven-extras
+dnf install -y otter-browser
+dnf install -y xcb-util xterm
+dnf install -y https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/x/xpdf-3.04-10.el7.x86_64.rpm
+echo "xpdf" > /etc/dnf/protected.d/xpdf.conf
+echo "libQt5WebEngineWidgets" > /etc/dnf/protected.d/libQt5WebEngineWidgets
+echo "libQt5Multimedia" > /etc/dnf/protected.d/libQt5Multimedia.conf
+echo "libQt5WebEngineCore" > /etc/dnf/protected.d/libQt5WebEngineCore.conf
+echo "xorg-x11-fonts-ISO8859-1-100dpi" > /etc/dnf/protected.d/xorg-x11-fonts-ISO8859-1-100dpi.conf
+echo "xorg-x11-fonts-ISO8859-1-75dpi" > /etc/dnf/protected.d/xorg-x11-fonts-ISO8859-1-75dpi.conf
+echo "xorg-x11-server-Xorg" > /etc/dnf/protected.d/xorg-x11-server-Xorg.conf
+echo "xorg-x11-server-Xwayland" > /etc/dnf/protected.d/xorg-x11-server-Xwayland.conf
+echo "sudo" > /etc/dnf/protected.d/sudo.conf
+echo "dnf" > /etc/dnf/protected.d/dnf.conf
+echo "Xfce" > /etc/dnf/protected.d/Xfce.conf
 echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
-echo "Xorg" > /etc/dnf/protected.d/Xorg.conf
+echo "xterm" > /etc/dnf/protected.d/xterm.conf
 echo "NetworkManager" > /etc/dnf/protected.d/NetworkManager.conf
 echo "bash" > /etc/dnf/protected.d/bash.conf
-echo "accountsservice" > /etc/dnf/protected.d/accountsservice.conf
+echo "otter-browser" > /etc/dnf/protected.d/otter-browser.conf
+echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
+echo "Xorg" > /etc/dnf/protected.d/Xorg.conf
 yum list installed > installed.txt
 gawk '{print "yum autoremove -y "$0}' installed.txt > installed1.txt
 sed 's/\.x86_64.*/.x86_64/' installed1.txt > installed2.txt
