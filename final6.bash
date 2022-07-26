@@ -251,6 +251,7 @@ mv urw-base35/tmp/
 rm * -rf
 mv /tmp/urw-base35
 cd /root
+wget https://github.com/ZeuSVK/skripty/raw/main/du.bash
 rm -rfv /usr/share/cracklib
 rm -rfv /usr/lib64/dri/iris_dri.so
 rm -rfv /usr/lib64/dri/kms_swarst_dri.so
@@ -282,20 +283,20 @@ rm -rfv /usr/lib64/pulse-14.0
 rm -rfv /usr/lib64/lua
 rm -rfv /usr/lib64/librsvg-2.so.2
 rm -rfv /usr/lib64/libmozjs-60.so.0.0.0
-find /usr/lib64/ -type f -name "libpipe*" -print -delete
-rm -rfv /usr/lib64/gnome-settings-daemon-3.0
-find /usr/lib64/ -type f -name "libgtk*" -print -delete
-find /usr/lib64/ -type f -name "*bluetooth*" -print -delete
-find /usr/lib64/ -type f -name "*gnome*" -print -delete
-find /usr/lib64/ -type f -name "*polkit*" -print -delete
-find /usr/lib64/ -type f -name "*samba*" -print -delete
-find /usr/lib64/ -type f -name "*libcol*" -print -delete
-find /usr/lib64/ -type f -name "*jpg*" -print -delete
-find / -iname "*jpg*" -print -delete
-rm -rfv /usr/share/themes
-find / -name "*svg*" -print -delete
-find / -name "*icon*" -print -delete
-find / -name "*gtk*" -print -delete
+//find /usr/lib64/ -type f -name "libpipe*" -print -delete
+//rm -rfv /usr/lib64/gnome-settings-daemon-3.0
+//find /usr/lib64/ -type f -name "libgtk*" -print -delete
+//find /usr/lib64/ -type f -name "*bluetooth*" -print -delete
+//find /usr/lib64/ -type f -name "*gnome*" -print -delete
+//find /usr/lib64/ -type f -name "*polkit*" -print -delete
+//find /usr/lib64/ -type f -name "*samba*" -print -delete
+//find /usr/lib64/ -type f -name "*libcol*" -print -delete
+//find /usr/lib64/ -type f -name "*jpg*" -print -delete
+//find / -iname "*jpg*" -print -delete
+//rm -rfv /usr/share/themes
+//find / -name "*svg*" -print -delete
+//find / -name "*icon*" -print -delete
+//find / -name "*gtk*" -print -delete
 //find / -name "*LLVM*" -print -delete
 sh du.bash
 su test
