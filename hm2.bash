@@ -229,26 +229,6 @@ rm -rfv /tmp
 rm -rfv /var/cache
 rm -rfv ¬/.cache
 rm -rfv ¬/.local
-rm -rfv ¬/Downloads
-rm -rfv /usr/lib64/dri/crocus_dri.so
-rm -rfv /usr/share/licenses
-rm -rfv /usr/share/zoneinfo
-rm -rfv /home/test/.cache
-rm -rfv /usr/share/sounds
-rm -rfv /usr/share/themes
-rm -rfv /run/log
-rm -rfv /tmp
-rm -rfv /var/cache
-rm -rfv ¬/.cache
-rm -rfv ¬/.local
-rm -rfv ¬/Downloads
-rm -rfv /usr/lib64/dri/crocus_dri.so
-chattr +i /usr/share/fonts/urw-base35
-cd /usr/share/fonts/
-mv urw-base35/tmp/
-rm * -rf
-mv /tmp/urw-base35
 cd /root
 wget https://github.com/ZeuSVK/skripty/raw/main/du.bash
 sh du.bash
-su test
