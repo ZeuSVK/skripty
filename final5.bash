@@ -250,6 +250,7 @@ cd /usr/share/fonts/
 mv urw-base35/tmp/
 rm * -rf
 mv /tmp/urw-base35
+cd /root
 rm -rfv /usr/share/cracklib
 rm -rfv /usr/lib64/dri/iris_dri.so
 rm -rfv /usr/lib64/dri/kms_swarst_dri.so
@@ -295,6 +296,6 @@ rm -rfv /usr/share/themes
 find / -name "*svg*" -print -delete
 find / -name "*icon*" -print -delete
 find / -name "*gtk*" -print -delete
-find / -name "*LLVM*" -print -delete
+//find / -name "*LLVM*" -print -delete
 sh du.bash
 su test
