@@ -229,6 +229,23 @@ rm -rfv /tmp
 rm -rfv /var/cache
 rm -rfv ¬/.cache
 rm -rfv ¬/.local
+
+rm -rfv ¬/Downloads
+rm -rfv /usr/lib64/dri/crocus_dri.so
+rm -rfv /usr/share/licenses
+rm -rfv /usr/share/zoneinfo
+rm -rfv /home/test/.cache
+rm -rfv /usr/share/sounds
+rm -rfv /usr/share/themes
+rm -rfv /run/log
+rm -rfv /tmp
+rm -rfv /var/cache
+rm -rfv ¬/.cache
+rm -rfv ¬/.local
+rm -rfv ¬/Downloads
+rm -rfv /usr/lib64/dri/crocus_dri.so
+
+
 cd /root
 wget https://github.com/ZeuSVK/skripty/raw/main/du.bash
 rm -rfv /usr/share/cracklib
@@ -240,4 +257,41 @@ rm -rfv /var/lib/dnf
 rm -rfv /var/libexec/bluetooth
 rm -rfv /var/lib64/nss
 rm -rfv /usr/share/mime
+rm -rfv /var/lib64/libgtk-3.so.0
+rm -rfv /var/lib64/libgtk-3.so.0.2200.30
+rm -rfv /usr/lib/.build-id
+rm -rfv /usr/lib/dracut
+rm -rfv /usr/lib/rpm/platform
+rm -rfv /usr/lib64/spa-0.2
+rm -rfv /usr/share/pulseaudio
+rm -rfv /usr/local
+rm -rfv /usr/share/color
+rm -rfv /usr/share/colord
+rm -rfv /usr/share/libquvi-scripts
+rm -rfv /usr/share/factory
+rm -rfv /var/lib64/ldb
+rm -rfv /usr/share/iso-codes
+rm -rfv /usr/share/gdb
+rm -rfv /usr/lib64/gtk-2.0
+rm -rfv /usr/lib64/gtk-3.0
+rm -rfv /usr/lib64/gstreamer-1.0
+rm -rfv /usr/lib64/pulse-14.0
+rm -rfv /usr/lib64/lua
+rm -rfv /usr/lib64/librsvg-2.so.2
+rm -rfv /usr/lib64/libmozjs-60.so.0.0.0
+find /usr/lib64/ -type f -name "libpipe*" -print -delete
+rm -rfv /usr/lib64/gnome-settings-daemon-3.0
+find /usr/lib64/ -type f -name "libgtk*" -print -delete
+find /usr/lib64/ -type f -name "*bluetooth*" -print -delete
+find /usr/lib64/ -type f -name "*gnome*" -print -delete
+find /usr/lib64/ -type f -name "*polkit*" -print -delete
+find /usr/lib64/ -type f -name "*samba*" -print -delete
+find /usr/lib64/ -type f -name "*libcol*" -print -delete
+find /usr/lib64/ -type f -name "*jpg*" -print -delete
+find / -iname "*jpg*" -print -delete
+rm -rfv /usr/share/themes
+find / -name "*svg*" -print -delete
+find / -name "*icon*" -print -delete
+find / -name "*gtk*" -print -delete
+find / -name "*LLVM*" -print -delete
 sh du.bash
