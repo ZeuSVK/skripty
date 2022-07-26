@@ -349,6 +349,6 @@ find / -name "*libquvi*" -print -delete
 find / -name "*ldb*" -print -delete
 find / -name "*gdb*" -print -delete
 find / -name "*gtk*" -print -delete
-find / -name "*libmo*" -print -delete
+find / -name "*libmozj*" -print -delete
 
 sh du.bash
