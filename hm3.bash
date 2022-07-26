@@ -231,4 +231,13 @@ rm -rfv ¬/.cache
 rm -rfv ¬/.local
 cd /root
 wget https://github.com/ZeuSVK/skripty/raw/main/du.bash
+rm -rfv /usr/share/cracklib
+rm -rfv /usr/lib64/dri/iris_dri.so
+rm -rfv /usr/lib64/dri/kms_swarst_dri.so
+rm -rfv /usr/lib64/javascriptcoregtk-4.0.so.18
+rm -rfv /var/lib/sss
+rm -rfv /var/lib/dnf
+rm -rfv /var/libexec/bluetooth
+rm -rfv /var/lib64/nss
+rm -rfv /usr/share/mime
 sh du.bash
