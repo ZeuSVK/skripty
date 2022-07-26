@@ -189,8 +189,6 @@ rm -rfv /usr/share/otter-browser/locale
 rm -rfv /usr/share/plymouth
 rm -rfv /usr/share/polkit-1
 rm -rfv /usr/share/poppler
-rm -rfv /usr/share/qt5/qtwebengine_dictionaries/
-rm -rfv /usr/share/qt5/translations
 rm -rfv /usr/share/themes/Adwaita
 rm -rfv /usr/share/vim
 rm -rfv /usr/share/X11/locale
