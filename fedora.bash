@@ -31,6 +31,7 @@ echo "Xfce" > /etc/dnf/protected.d/Xfce.conf
 echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
 echo "xterm" > /etc/dnf/protected.d/xterm.conf
 echo "NetworkManager" > /etc/dnf/protected.d/NetworkManager.conf
+echo "ModemManager" > /etc/dnf/protected.d/ModemManager.conf
 echo "bash" > /etc/dnf/protected.d/bash.conf
 echo "otter-browser" > /etc/dnf/protected.d/otter-browser.conf
 echo "xorg-x11-xinit" > /etc/dnf/protected.d/xorg-x11-xinit.conf
