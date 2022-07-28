@@ -1,4 +1,5 @@
 #!/bin/sh
+#installation of extra packages for Xfce
 dnf install epel-release -y
 dnf --enablerepo=epel group
 dnf install dnf-plugins-core -y
@@ -6,6 +7,7 @@ dnf config-manager --set-enabled powertools
 dnf groupinstall "Xfce" "base-x" -y
 echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc
 systemctl set-default graphical
+#installation of Development tools and Raven for Otter-Browser and XTerm
 dnf -y groupinstall "Development Tools"
 dnf -y install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-2.el8.noarch.rpm
 dnf --enablerepo=raven-multimedia
@@ -16,6 +18,7 @@ dnf install -y https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Package
 dnf install -y libxfce4ui
 dnf install -y xfce4-session
 dnf install -y https://pkgs.dyn.su/el8/base/x86_64/libwnck-2.31.0-16.el8.x86_64.rpm
+#protecting packages from removal
 echo "accountsservice" > /etc/dnf/protected.d/accountsservice.conf
 echo "xpdf" > /etc/dnf/protected.d/xpdf.conf
 echo "libQt5WebEngineWidgets" > /etc/dnf/protected.d/libQt5WebEngineWidgets
@@ -42,18 +45,19 @@ echo "libwnck-2.31.0-16" > /etc/dnf/protected.d/libwnck-2.31.0-16.conf
 echo "wget" > /etc/dnf/protected.d/wget.conf
 echo "xfce4-session" > /etc/dnf/protected.d/xfce4-session.conf
 echo "libxfce4ui" > /etc/dnf/protected.d/libxfce4ui.conf
-#ochrana priečinka pred odstránením
+#protecting folder from removal
 chattr +i /usr/bin/xfce4-session
-#pridanie užívateľa
+#adding "test" user
 adduser test
-#zistenie všetkých nainštalovaných balíčkov
+#finding every installed package
 yum list installed > installed.txt
 gawk '{print "yum autoremove -y "$0}' installed.txt > installed1.txt
 sed 's/\.x86_64.*/.x86_64/' installed1.txt > installed2.txt
 sed 's/\.noarch.*/.noarch/' installed2.txt > installed3.txt
-#spustenie skriptu
+#finding log and rescue files
 find /var/log -name ‘*.log*’ -delete
 find /boot -name *rescue* -delete
+#start of package removing
 sh installed3.txt
 dnf -y install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-2.el8.noarch.rpm
 dnf --enablerepo=raven-multimedia
@@ -62,6 +66,7 @@ dnf install -y libxfce4ui
 dnf install -y xfce4-session
 dnf install -y https://pkgs.dyn.su/el8/base/x86_64/libwnck-2.31.0-16.el8.x86_64.rpm
 cd /boot
+#removing unused kernel versions
 wget https://github.com/ZeuSVK/skripty/raw/main/kernel.bash
 sed s/\vmlinuz-4.18.0-383.el8.x86_64/vmlinuz-$(uname -r)/ kernel.bash > kernel1.bash
 sed s/\initramfs-4.18.0-383.el8.x86_64/initramfs-$(uname -r)/ kernel1.bash > kernel2.bash
@@ -69,7 +74,9 @@ sed s/\config-4.18.0-383.el8.x86_64/config-$(uname -r)/ kernel2.bash > kernel3.b
 shopt -s extglob
 sh kernel3.bash
 cd /home/test
+#downloading scripts to /home/test directory
 wget https://github.com/ZeuSVK/skripty/raw/main/bsos.pdf
+#removing files, subfolders, etc.
 rm -rfv ./.cache
 rm -rfv ./.mozilla
 rm -rfv /var/cache/*
@@ -244,6 +251,7 @@ rm -rfv ¬/.local
 rm -rfv ¬/Downloads
 rm -rfv /usr/lib64/dri/crocus_dri.so
 cd /root
+#downloading script for finding the actual size of the os
 wget https://github.com/ZeuSVK/skripty/raw/main/du.bash
 rm -rfv /usr/share/cracklib
 rm -rfv /usr/lib64/dri/iris_dri.so
