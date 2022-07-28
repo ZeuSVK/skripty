@@ -229,7 +229,6 @@ rm -rfv /tmp
 rm -rfv /var/cache
 rm -rfv ¬/.cache
 rm -rfv ¬/.local
-
 rm -rfv ¬/Downloads
 rm -rfv /usr/lib64/dri/crocus_dri.so
 rm -rfv /usr/share/licenses
@@ -244,8 +243,6 @@ rm -rfv ¬/.cache
 rm -rfv ¬/.local
 rm -rfv ¬/Downloads
 rm -rfv /usr/lib64/dri/crocus_dri.so
-
-
 cd /root
 wget https://github.com/ZeuSVK/skripty/raw/main/du.bash
 rm -rfv /usr/share/cracklib
@@ -350,5 +347,4 @@ find / -name "*ldb*" -print -delete
 find / -name "*gdb*" -print -delete
 find / -name "*gtk*" -print -delete
 find / -name "*libmozj*" -print -delete
-
 sh du.bash
