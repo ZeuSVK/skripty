@@ -45,8 +45,9 @@ echo "libwnck-2.31.0-16" > /etc/dnf/protected.d/libwnck-2.31.0-16.conf
 echo "wget" > /etc/dnf/protected.d/wget.conf
 echo "xfce4-session" > /etc/dnf/protected.d/xfce4-session.conf
 echo "libxfce4ui" > /etc/dnf/protected.d/libxfce4ui.conf
-#protecting folder from removal
+#protecting folders from removal
 chattr +i /usr/bin/xfce4-session
+chattr +i /usr/bin/find
 #adding "test" user
 adduser test
 #finding every installed package
